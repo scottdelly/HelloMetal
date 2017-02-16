@@ -14,6 +14,10 @@
 		D2D0866D1E565B5100C41D71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D0866B1E565B5100C41D71 /* LaunchScreen.storyboard */; };
 		D2D086781E565B5100C41D71 /* HelloMetalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086771E565B5100C41D71 /* HelloMetalTests.swift */; };
 		D2D086831E565B5100C41D71 /* HelloMetalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086821E565B5100C41D71 /* HelloMetalUITests.swift */; };
+		D2D086941E56605E00C41D71 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = D2D086931E56605E00C41D71 /* Shaders.metal */; };
+		D2D086981E56666A00C41D71 /* Matrix4.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D086971E56666A00C41D71 /* Matrix4.m */; };
+		D2D0869A1E5666B100C41D71 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086991E5666B100C41D71 /* Vertex.swift */; };
+		D2D0869C1E5666C700C41D71 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0869B1E5666C700C41D71 /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,13 @@
 		D2D0867E1E565B5100C41D71 /* HelloMetalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloMetalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D086821E565B5100C41D71 /* HelloMetalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloMetalUITests.swift; sourceTree = "<group>"; };
 		D2D086841E565B5100C41D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2D086911E565E3500C41D71 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D2D086931E56605E00C41D71 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		D2D086951E56666900C41D71 /* HelloMetal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloMetal-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2D086961E56666A00C41D71 /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix4.h; sourceTree = "<group>"; };
+		D2D086971E56666A00C41D71 /* Matrix4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix4.m; sourceTree = "<group>"; };
+		D2D086991E5666B100C41D71 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		D2D0869B1E5666C700C41D71 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +92,7 @@
 				D2D086761E565B5100C41D71 /* HelloMetalTests */,
 				D2D086811E565B5100C41D71 /* HelloMetalUITests */,
 				D2D086601E565B5100C41D71 /* Products */,
+				D2D086901E565E3500C41D71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +111,16 @@
 			children = (
 				D2D086621E565B5100C41D71 /* AppDelegate.swift */,
 				D2D086641E565B5100C41D71 /* ViewController.swift */,
+				D2D086931E56605E00C41D71 /* Shaders.metal */,
 				D2D086661E565B5100C41D71 /* Main.storyboard */,
 				D2D086691E565B5100C41D71 /* Assets.xcassets */,
 				D2D0866B1E565B5100C41D71 /* LaunchScreen.storyboard */,
 				D2D0866E1E565B5100C41D71 /* Info.plist */,
+				D2D086961E56666A00C41D71 /* Matrix4.h */,
+				D2D086971E56666A00C41D71 /* Matrix4.m */,
+				D2D086951E56666900C41D71 /* HelloMetal-Bridging-Header.h */,
+				D2D086991E5666B100C41D71 /* Vertex.swift */,
+				D2D0869B1E5666C700C41D71 /* Node.swift */,
 			);
 			path = HelloMetal;
 			sourceTree = "<group>";
@@ -123,6 +141,14 @@
 				D2D086841E565B5100C41D71 /* Info.plist */,
 			);
 			path = HelloMetalUITests;
+			sourceTree = "<group>";
+		};
+		D2D086901E565E3500C41D71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2D086911E565E3500C41D71 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +220,7 @@
 					D2D0865E1E565B5100C41D71 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = B6F4JCJJ4W;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					D2D086721E565B5100C41D71 = {
@@ -262,7 +289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D086941E56605E00C41D71 /* Shaders.metal in Sources */,
+				D2D086981E56666A00C41D71 /* Matrix4.m in Sources */,
 				D2D086651E565B5100C41D71 /* ViewController.swift in Sources */,
+				D2D0869C1E5666C700C41D71 /* Node.swift in Sources */,
+				D2D0869A1E5666B100C41D71 /* Vertex.swift in Sources */,
 				D2D086631E565B5100C41D71 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,11 +446,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = B6F4JCJJ4W;
 				INFOPLIST_FILE = HelloMetal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.scottdelly.HelloMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloMetal/HelloMetal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -428,11 +462,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = B6F4JCJJ4W;
 				INFOPLIST_FILE = HelloMetal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.scottdelly.HelloMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloMetal/HelloMetal-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
