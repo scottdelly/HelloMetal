@@ -18,6 +18,9 @@
 		D2D086981E56666A00C41D71 /* Matrix4.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D086971E56666A00C41D71 /* Matrix4.m */; };
 		D2D0869A1E5666B100C41D71 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086991E5666B100C41D71 /* Vertex.swift */; };
 		D2D0869C1E5666C700C41D71 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0869B1E5666C700C41D71 /* Node.swift */; };
+		D2D0869E1E5667D600C41D71 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0869D1E5667D600C41D71 /* Triangle.swift */; };
+		D2D086A01E566A4700C41D71 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0869F1E566A4700C41D71 /* Cube.swift */; };
+		D2D086A21E56722700C41D71 /* AnimatedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086A11E56722700C41D71 /* AnimatedNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		D2D086971E56666A00C41D71 /* Matrix4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix4.m; sourceTree = "<group>"; };
 		D2D086991E5666B100C41D71 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
 		D2D0869B1E5666C700C41D71 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		D2D0869D1E5667D600C41D71 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		D2D0869F1E566A4700C41D71 /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		D2D086A11E56722700C41D71 /* AnimatedNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +117,7 @@
 			children = (
 				D2D086621E565B5100C41D71 /* AppDelegate.swift */,
 				D2D086641E565B5100C41D71 /* ViewController.swift */,
-				D2D086931E56605E00C41D71 /* Shaders.metal */,
+				D2D0869F1E566A4700C41D71 /* Cube.swift */,
 				D2D086661E565B5100C41D71 /* Main.storyboard */,
 				D2D086691E565B5100C41D71 /* Assets.xcassets */,
 				D2D0866B1E565B5100C41D71 /* LaunchScreen.storyboard */,
@@ -121,6 +127,9 @@
 				D2D086951E56666900C41D71 /* HelloMetal-Bridging-Header.h */,
 				D2D086991E5666B100C41D71 /* Vertex.swift */,
 				D2D0869B1E5666C700C41D71 /* Node.swift */,
+				D2D086A11E56722700C41D71 /* AnimatedNode.swift */,
+				D2D0869D1E5667D600C41D71 /* Triangle.swift */,
+				D2D086931E56605E00C41D71 /* Shaders.metal */,
 			);
 			path = HelloMetal;
 			sourceTree = "<group>";
@@ -291,9 +300,12 @@
 			files = (
 				D2D086941E56605E00C41D71 /* Shaders.metal in Sources */,
 				D2D086981E56666A00C41D71 /* Matrix4.m in Sources */,
+				D2D086A21E56722700C41D71 /* AnimatedNode.swift in Sources */,
 				D2D086651E565B5100C41D71 /* ViewController.swift in Sources */,
 				D2D0869C1E5666C700C41D71 /* Node.swift in Sources */,
+				D2D086A01E566A4700C41D71 /* Cube.swift in Sources */,
 				D2D0869A1E5666B100C41D71 /* Vertex.swift in Sources */,
+				D2D0869E1E5667D600C41D71 /* Triangle.swift in Sources */,
 				D2D086631E565B5100C41D71 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
