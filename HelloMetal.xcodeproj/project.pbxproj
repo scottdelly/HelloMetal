@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D28734161E5F78620001EA61 /* cube.png in Resources */ = {isa = PBXBuildFile; fileRef = D28734151E5F78620001EA61 /* cube.png */; };
+		D29214751E5CDBE400ABCDBD /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29214741E5CDBE400ABCDBD /* Renderer.swift */; };
+		D292147B1E5CE4E200ABCDBD /* MBEFontAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = D292147A1E5CE4E200ABCDBD /* MBEFontAtlas.m */; };
+		D292147F1E5CFB5800ABCDBD /* TextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D292147E1E5CFB5800ABCDBD /* TextNode.swift */; };
+		D29214811E5F6A1900ABCDBD /* float4x4+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29214801E5F6A1900ABCDBD /* float4x4+Extensions.swift */; };
+		D29214851E5F750200ABCDBD /* MetalTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29214841E5F750200ABCDBD /* MetalTexture.swift */; };
+		D29214871E5F752E00ABCDBD /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29214861E5F752E00ABCDBD /* Light.swift */; };
+		D29214891E5F754B00ABCDBD /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29214881E5F754B00ABCDBD /* Node.swift */; };
+		D292148B1E5F756D00ABCDBD /* TexturedCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = D292148A1E5F756D00ABCDBD /* TexturedCube.swift */; };
+		D292148F1E5F758C00ABCDBD /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D292148C1E5F758C00ABCDBD /* MetalViewController.swift */; };
+		D29214911E5F758C00ABCDBD /* BufferProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D292148E1E5F758C00ABCDBD /* BufferProvider.swift */; };
+		D29214931E5F75CD00ABCDBD /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29214921E5F75CD00ABCDBD /* MetalKit.framework */; };
+		D29214951E5F773D00ABCDBD /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = D29214941E5F773D00ABCDBD /* Shaders.metal */; };
+		D2B9A7AD1E5FD49C005748A9 /* TextRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B9A7AC1E5FD49C005748A9 /* TextRenderer.swift */; };
 		D2D086631E565B5100C41D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086621E565B5100C41D71 /* AppDelegate.swift */; };
 		D2D086651E565B5100C41D71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086641E565B5100C41D71 /* ViewController.swift */; };
 		D2D086681E565B5100C41D71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D086661E565B5100C41D71 /* Main.storyboard */; };
@@ -14,13 +28,10 @@
 		D2D0866D1E565B5100C41D71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D0866B1E565B5100C41D71 /* LaunchScreen.storyboard */; };
 		D2D086781E565B5100C41D71 /* HelloMetalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086771E565B5100C41D71 /* HelloMetalTests.swift */; };
 		D2D086831E565B5100C41D71 /* HelloMetalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086821E565B5100C41D71 /* HelloMetalUITests.swift */; };
-		D2D086941E56605E00C41D71 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = D2D086931E56605E00C41D71 /* Shaders.metal */; };
-		D2D086981E56666A00C41D71 /* Matrix4.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D086971E56666A00C41D71 /* Matrix4.m */; };
 		D2D0869A1E5666B100C41D71 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086991E5666B100C41D71 /* Vertex.swift */; };
-		D2D0869C1E5666C700C41D71 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0869B1E5666C700C41D71 /* Node.swift */; };
+		D2D0869C1E5666C700C41D71 /* Node-old.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0869B1E5666C700C41D71 /* Node-old.swift */; };
 		D2D0869E1E5667D600C41D71 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0869D1E5667D600C41D71 /* Triangle.swift */; };
 		D2D086A01E566A4700C41D71 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0869F1E566A4700C41D71 /* Cube.swift */; };
-		D2D086A21E56722700C41D71 /* AnimatedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D086A11E56722700C41D71 /* AnimatedNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +52,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D28734151E5F78620001EA61 /* cube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cube.png; sourceTree = "<group>"; };
+		D29214741E5CDBE400ABCDBD /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Renderer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D29214791E5CE4E200ABCDBD /* MBEFontAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEFontAtlas.h; sourceTree = "<group>"; };
+		D292147A1E5CE4E200ABCDBD /* MBEFontAtlas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEFontAtlas.m; sourceTree = "<group>"; };
+		D292147C1E5CFA7E00ABCDBD /* HelloMetal.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloMetal.pch; sourceTree = "<group>"; };
+		D292147E1E5CFB5800ABCDBD /* TextNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextNode.swift; sourceTree = "<group>"; };
+		D29214801E5F6A1900ABCDBD /* float4x4+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "float4x4+Extensions.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D29214841E5F750200ABCDBD /* MetalTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTexture.swift; sourceTree = "<group>"; };
+		D29214861E5F752E00ABCDBD /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		D29214881E5F754B00ABCDBD /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		D292148A1E5F756D00ABCDBD /* TexturedCube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TexturedCube.swift; sourceTree = "<group>"; };
+		D292148C1E5F758C00ABCDBD /* MetalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
+		D292148E1E5F758C00ABCDBD /* BufferProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferProvider.swift; sourceTree = "<group>"; };
+		D29214921E5F75CD00ABCDBD /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		D29214941E5F773D00ABCDBD /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		D2B9A7AC1E5FD49C005748A9 /* TextRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextRenderer.swift; sourceTree = "<group>"; };
 		D2D0865F1E565B5100C41D71 /* HelloMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D086621E565B5100C41D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2D086641E565B5100C41D71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D2D086641E565B5100C41D71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D2D086671E565B5100C41D71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2D086691E565B5100C41D71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2D0866C1E565B5100C41D71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,15 +82,12 @@
 		D2D086821E565B5100C41D71 /* HelloMetalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloMetalUITests.swift; sourceTree = "<group>"; };
 		D2D086841E565B5100C41D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2D086911E565E3500C41D71 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D2D086931E56605E00C41D71 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		D2D086951E56666900C41D71 /* HelloMetal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloMetal-Bridging-Header.h"; sourceTree = "<group>"; };
-		D2D086961E56666A00C41D71 /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix4.h; sourceTree = "<group>"; };
-		D2D086971E56666A00C41D71 /* Matrix4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix4.m; sourceTree = "<group>"; };
+		D2D086931E56605E00C41D71 /* Shaders-old.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = "Shaders-old.metal"; sourceTree = "<group>"; };
+		D2D086951E56666900C41D71 /* HelloMetal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "HelloMetal-Bridging-Header.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		D2D086991E5666B100C41D71 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
-		D2D0869B1E5666C700C41D71 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		D2D0869B1E5666C700C41D71 /* Node-old.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Node-old.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D2D0869D1E5667D600C41D71 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		D2D0869F1E566A4700C41D71 /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
-		D2D086A11E56722700C41D71 /* AnimatedNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D29214931E5F75CD00ABCDBD /* MetalKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,20 +141,32 @@
 			isa = PBXGroup;
 			children = (
 				D2D086621E565B5100C41D71 /* AppDelegate.swift */,
-				D2D086641E565B5100C41D71 /* ViewController.swift */,
-				D2D0869F1E566A4700C41D71 /* Cube.swift */,
+				D292148C1E5F758C00ABCDBD /* MetalViewController.swift */,
+				D29214741E5CDBE400ABCDBD /* Renderer.swift */,
+				D292148E1E5F758C00ABCDBD /* BufferProvider.swift */,
 				D2D086661E565B5100C41D71 /* Main.storyboard */,
 				D2D086691E565B5100C41D71 /* Assets.xcassets */,
 				D2D0866B1E565B5100C41D71 /* LaunchScreen.storyboard */,
 				D2D0866E1E565B5100C41D71 /* Info.plist */,
-				D2D086961E56666A00C41D71 /* Matrix4.h */,
-				D2D086971E56666A00C41D71 /* Matrix4.m */,
+				D29214841E5F750200ABCDBD /* MetalTexture.swift */,
 				D2D086951E56666900C41D71 /* HelloMetal-Bridging-Header.h */,
+				D29214791E5CE4E200ABCDBD /* MBEFontAtlas.h */,
+				D292147A1E5CE4E200ABCDBD /* MBEFontAtlas.m */,
 				D2D086991E5666B100C41D71 /* Vertex.swift */,
-				D2D0869B1E5666C700C41D71 /* Node.swift */,
-				D2D086A11E56722700C41D71 /* AnimatedNode.swift */,
+				D29214861E5F752E00ABCDBD /* Light.swift */,
+				D29214881E5F754B00ABCDBD /* Node.swift */,
+				D2D0869F1E566A4700C41D71 /* Cube.swift */,
+				D292148A1E5F756D00ABCDBD /* TexturedCube.swift */,
+				D2D0869B1E5666C700C41D71 /* Node-old.swift */,
+				D292147E1E5CFB5800ABCDBD /* TextNode.swift */,
 				D2D0869D1E5667D600C41D71 /* Triangle.swift */,
-				D2D086931E56605E00C41D71 /* Shaders.metal */,
+				D29214941E5F773D00ABCDBD /* Shaders.metal */,
+				D2D086931E56605E00C41D71 /* Shaders-old.metal */,
+				D292147C1E5CFA7E00ABCDBD /* HelloMetal.pch */,
+				D29214801E5F6A1900ABCDBD /* float4x4+Extensions.swift */,
+				D28734151E5F78620001EA61 /* cube.png */,
+				D2D086641E565B5100C41D71 /* ViewController.swift */,
+				D2B9A7AC1E5FD49C005748A9 /* TextRenderer.swift */,
 			);
 			path = HelloMetal;
 			sourceTree = "<group>";
@@ -155,6 +192,7 @@
 		D2D086901E565E3500C41D71 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D29214921E5F75CD00ABCDBD /* MetalKit.framework */,
 				D2D086911E565E3500C41D71 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
@@ -273,6 +311,7 @@
 			files = (
 				D2D0866D1E565B5100C41D71 /* LaunchScreen.storyboard in Resources */,
 				D2D0866A1E565B5100C41D71 /* Assets.xcassets in Resources */,
+				D28734161E5F78620001EA61 /* cube.png in Resources */,
 				D2D086681E565B5100C41D71 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,14 +337,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2D086941E56605E00C41D71 /* Shaders.metal in Sources */,
-				D2D086981E56666A00C41D71 /* Matrix4.m in Sources */,
-				D2D086A21E56722700C41D71 /* AnimatedNode.swift in Sources */,
+				D29214951E5F773D00ABCDBD /* Shaders.metal in Sources */,
+				D29214811E5F6A1900ABCDBD /* float4x4+Extensions.swift in Sources */,
+				D29214911E5F758C00ABCDBD /* BufferProvider.swift in Sources */,
 				D2D086651E565B5100C41D71 /* ViewController.swift in Sources */,
-				D2D0869C1E5666C700C41D71 /* Node.swift in Sources */,
+				D292148B1E5F756D00ABCDBD /* TexturedCube.swift in Sources */,
+				D29214851E5F750200ABCDBD /* MetalTexture.swift in Sources */,
+				D2D0869C1E5666C700C41D71 /* Node-old.swift in Sources */,
+				D29214891E5F754B00ABCDBD /* Node.swift in Sources */,
 				D2D086A01E566A4700C41D71 /* Cube.swift in Sources */,
 				D2D0869A1E5666B100C41D71 /* Vertex.swift in Sources */,
 				D2D0869E1E5667D600C41D71 /* Triangle.swift in Sources */,
+				D2B9A7AD1E5FD49C005748A9 /* TextRenderer.swift in Sources */,
+				D292147B1E5CE4E200ABCDBD /* MBEFontAtlas.m in Sources */,
+				D292147F1E5CFB5800ABCDBD /* TextNode.swift in Sources */,
+				D29214751E5CDBE400ABCDBD /* Renderer.swift in Sources */,
+				D29214871E5F752E00ABCDBD /* Light.swift in Sources */,
+				D292148F1E5F758C00ABCDBD /* MetalViewController.swift in Sources */,
 				D2D086631E565B5100C41D71 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +451,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_OPTIMIZATION_LEVEL = 0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -447,6 +496,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_OPTIMIZATION_LEVEL = s;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -460,6 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = B6F4JCJJ4W;
+				GCC_PREFIX_HEADER = HelloMetal/HelloMetal.pch;
 				INFOPLIST_FILE = HelloMetal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.scottdelly.HelloMetal;
@@ -476,6 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = B6F4JCJJ4W;
+				GCC_PREFIX_HEADER = HelloMetal/HelloMetal.pch;
 				INFOPLIST_FILE = HelloMetal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.scottdelly.HelloMetal;
@@ -562,6 +614,7 @@
 				D2D086891E565B5100C41D71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2D0868A1E565B5100C41D71 /* Build configuration list for PBXNativeTarget "HelloMetalTests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +623,7 @@
 				D2D0868C1E565B5100C41D71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2D0868D1E565B5100C41D71 /* Build configuration list for PBXNativeTarget "HelloMetalUITests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +632,7 @@
 				D2D0868F1E565B5100C41D71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
