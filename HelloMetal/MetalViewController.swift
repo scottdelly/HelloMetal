@@ -42,8 +42,10 @@ class MetalViewController: UIViewController {
         "it was the age of wisdom, it was the age of foolishness...\n\n" +
         "Все счастливые семьи похожи друг на друга, " +
         "каждая несчастливая семья несчастлива по-своему."
-        let node = TextNode(string: sampleText, inRect: self.view.bounds, withFont: UIFont.systemFont(ofSize: 18), device: device)
-        node.scale = 2
+        let textRect = UIScreen.main.nativeBounds.insetBy(dx: 10, dy: 10)
+        
+        let node = TextNode(string: sampleText, inRect: textRect, withFont: UIFont.systemFont(ofSize: 72), device: device)
+        node.scale = 1
         self.objectToDraw = node
            
         self.setupGestures()

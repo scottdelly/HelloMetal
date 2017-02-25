@@ -18,7 +18,7 @@ class TextNode: BaseNode, Node {
     
     static let FontAtlasSize = 2048
     
-    var indexBuffer: MTLBuffer
+    var indexBuffer: MTLBuffer!
     var fontTexture: MTLTexture!
     
     override func defaultSampler(_ device: MTLDevice) -> MTLSamplerState {
@@ -49,7 +49,7 @@ class TextNode: BaseNode, Node {
         let verticesPerGlyph = 4
         let vertexCount = frameGlyphCount * verticesPerGlyph
         let verticesAllocationSize = MemoryLayout<TextVertex>.size * vertexCount
-        let vertices = UnsafeMutablePointer<TextVertex>.allocate(capacity: verticesAllocationSize)
+        let vertices = UnsafeMutablePointer<Float>.allocate(capacity: verticesAllocationSize)
         var v = 0
 
         let indicesPerGlyph = 6
@@ -65,7 +65,6 @@ class TextNode: BaseNode, Node {
         let texture = device.makeTexture(descriptor: textureDescriptor)
         texture.label = "Font Atlas"
         texture.replace(region: region, mipmapLevel: 0, withBytes: (fontAtlas.textureData as NSData).bytes, bytesPerRow: atlasSize)
-        self.fontTexture = texture
         
         TextNode.enumerateGlyphs(frame: frame) { (glyph, index, bounds) in
             let glyphDescriptorIndex = Int(glyph)
@@ -75,17 +74,22 @@ class TextNode: BaseNode, Node {
                 return
             }
             let glyphInfo = fontAtlas.glyphDescriptors[glyphDescriptorIndex]
-            let vertexInfo = [[bounds.minX, bounds.maxY, 0, glyphInfo.topLeftTexCoord.x, glyphInfo.bottomRightTexCoord.y],
-                              [bounds.minX, bounds.minY, 0, glyphInfo.topLeftTexCoord.x, glyphInfo.topLeftTexCoord.y],
-                              [bounds.maxX, bounds.minY, 0, glyphInfo.bottomRightTexCoord.x, glyphInfo.topLeftTexCoord.y],
-                              [bounds.maxX, bounds.maxY, 0, glyphInfo.bottomRightTexCoord.x, glyphInfo.bottomRightTexCoord.y],
+            let vertexInfo = [[bounds.minX, bounds.maxY, glyphInfo.topLeftTexCoord.x, glyphInfo.bottomRightTexCoord.y],
+                              [bounds.minX, bounds.minY, glyphInfo.topLeftTexCoord.x, glyphInfo.topLeftTexCoord.y],
+                              [bounds.maxX, bounds.minY, glyphInfo.bottomRightTexCoord.x, glyphInfo.topLeftTexCoord.y],
+                              [bounds.maxX, bounds.maxY, glyphInfo.bottomRightTexCoord.x, glyphInfo.bottomRightTexCoord.y],
                               ]
             for vertexIndex in 0..<verticesPerGlyph {
-                vertices[v] = TextVertex(x: Float(vertexInfo[vertexIndex][0]),
-                                         y: Float(vertexInfo[vertexIndex][1]),
-                                         z: Float(vertexInfo[vertexIndex][2]),
-                                         textX: Float(vertexInfo[vertexIndex][3]),
-                                         textY: Float(vertexInfo[vertexIndex][4]))
+                let vertex = TextVertex(x: Float(vertexInfo[vertexIndex][0]),
+                                           y: Float(vertexInfo[vertexIndex][1]),
+                                           z: 0,
+                                           textX: Float(vertexInfo[vertexIndex][2]),
+                                           textY: Float(vertexInfo[vertexIndex][3]))
+                let floatBuffer = vertex.floatBuffer()
+                for f in 0..<floatBuffer.count {
+                    let index = v*floatBuffer.count+f
+                    vertices[index] = floatBuffer[f]
+                }
                 v += 1
             }
             
@@ -94,10 +98,12 @@ class TextNode: BaseNode, Node {
                 i += 1
             }
         }
+       
+        super.init(name: "Text Node", vertices: vertices, verticesSize: verticesAllocationSize, vertexCount: vertexCount, device: device)
 
+        self.fontTexture = texture
         self.indexBuffer = device.makeBuffer(bytes: indices, length: indicesAllocationSize, options: [])
         self.indexBuffer.label = "Text Mesh Indices"
-        super.init(name: "Text Node", vertices: vertices, verticesSize: verticesAllocationSize, vertexCount: vertexCount, device: device, options: [], texture: nil)
         self.vertexBuffer.label = "Text Mesh Vertices"
     }
     
@@ -128,22 +134,22 @@ class TextNode: BaseNode, Node {
             
             let runs = CTLineGetGlyphRuns(line) as! [CTRun]
             for j in 0..<runs.count {
-                let run = runs[j]
-                let glyphCount = CTRunGetGlyphCount(run)
+                var run = runs[j]
+                var glyphCount = CTRunGetGlyphCount(run)
                 
-                let glyphBuffer = UnsafeMutablePointer<CGGlyph>.allocate(capacity: glyphCount * MemoryLayout<CGGlyph>.size)
+                var glyphBuffer = UnsafeMutablePointer<CGGlyph>.allocate(capacity: glyphCount * MemoryLayout<CGGlyph>.size)
                 CTRunGetGlyphs(run, entireRange, glyphBuffer)
                 
-                let positionBuffer = UnsafeMutablePointer<CGPoint>.allocate(capacity: glyphCount * MemoryLayout<CGPoint>.size)
+                var positionBuffer = UnsafeMutablePointer<CGPoint>.allocate(capacity: glyphCount * MemoryLayout<CGPoint>.size)
                 CTRunGetPositions(run, entireRange, positionBuffer)
                 
                 for g in 0..<glyphCount {
-                    let glyph = glyphBuffer[g]
-                    let glyphOrigin = positionBuffer[g]
-                    let glyphRect = CTRunGetImageBounds(run, context, CFRangeMake(g, 1))
-                    let boundsTransX = frameBoundingRect.origin.x + lineOrigin.x
-                    let boundsTransY = frameBoundingRect.height + frameBoundingRect.origin.y - lineOrigin.y + glyphOrigin.y
-                    let pathTransform = CGAffineTransform(a: 1, b: 0, c: 0, d: -1, tx: boundsTransX, ty: boundsTransY)
+                    var glyph = glyphBuffer[g]
+                    var glyphOrigin = positionBuffer[g]
+                    var glyphRect = CTRunGetImageBounds(run, context, CFRangeMake(g, 1))
+                    var boundsTransX = frameBoundingRect.origin.x + lineOrigin.x
+                    var boundsTransY = frameBoundingRect.height + frameBoundingRect.origin.y - lineOrigin.y + glyphOrigin.y
+                    var pathTransform = CGAffineTransform(a: 1, b: 0, c: 0, d: -1, tx: boundsTransX, ty: boundsTransY)
                     block(glyph, glyphIndexInFrame, glyphRect.applying(pathTransform));
                     
                     glyphIndexInFrame += 1
